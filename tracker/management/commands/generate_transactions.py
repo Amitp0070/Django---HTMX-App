@@ -27,9 +27,9 @@ class Command(BaseCommand):
             Category.objects.get_or_create(name=category)
 
         # get the user 
-        user = User.objects.filter(username='bugbytes').first()
+        user = User.objects.filter(username='its_Amit').first()
         if not user:
-            user = User.objects.create_superuser(username='bugbytes', password='test')
+            user = User.objects.create_superuser(username='its_Amit', password='test')
 
         categories = Category.objects.all()
         types = [x[0] for x in Transaction.TRANSACTION_TYPE_CHOICES]
