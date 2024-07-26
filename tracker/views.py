@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from tracker.models import Transaction
 from tracker.filters import TransactionFilter
+from tracker.forms import TransactionForm
 
 # Create your views here.
 def index(request):
@@ -27,3 +28,9 @@ def transactions_list(request):
         return render(request, 'tracker/partials/transactions-container.html', context)
     
     return render(request, 'tracker/transactions-list.html', context)
+
+
+
+def create_transaction(request):
+    context = {'form': TransactionForm()}
+    return render(request, 'tracker/partials/create-transaction.html', context)

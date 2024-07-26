@@ -1,0 +1,13 @@
+{% load widget_tweaks %}
+
+<h1 class="mt-8 mb-4 prose prose-2xl text-white">
+Create Transaction
+</h1>
+
+<form>
+
+    <div class="mb-2 form-control text-black">
+        {{ form.type|add_label_class:"label text-black" }}
+        {% render_field form.type class="input" %}
+    </div>
+</form>
